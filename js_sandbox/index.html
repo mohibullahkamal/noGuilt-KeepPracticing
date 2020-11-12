@@ -6,13 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        div {
+            background-color: Black;
+            width: 300px;
+            height: 150px;
+        }
+    </style>
 </head>
 
 <body>
+
     <h1>Hello World...</h1>
+
+    <div id="random_background"></div>
+    <button id="color_change">Change</button>
+
+
     <script>
-        // alert("Page loaded successfully!")
+        function randomColor() {
+            return '#' + Math.random().toString(16).slice(2, 8);
+        };
+
+
+        var change = document.getElementById('color_change');
+        change.addEventListener('click', function () {
+
+            document.getElementById('random_background').style.backgroundColor = randomColor();
+        });
     </script>
+
 </body>
 
 </html>
